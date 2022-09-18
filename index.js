@@ -9,6 +9,7 @@ register("command", (cmdType) => {
         Client.showTitle("&e&lPlease press TAB!", "", 1, 25, 1);
         sleep(2050, () => {
             var recentChat = getUnformattedChat(10); // last 10 messages
+            print('hi')
             var hasVanished = recentChat.filter((message) => {
                 if (message.includes(Player.getName()) && message.includes(', ')) return message;
             });
@@ -28,5 +29,4 @@ register("command", (cmdType) => {
 })
 .setTabCompletions(["tell", "me", "w", "msg"])
 .setName("vanishchecker")
-.setAliases("vanishcheck")
-.setAliases("vcheck");
+.setAliases(["vanishcheck", "vcheck"])
