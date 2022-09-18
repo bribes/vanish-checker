@@ -3,6 +3,5 @@
     "creator": "Faav",
     "description": "A mod to see vanished people in servers.",
     "entry": "index.js",
-    "version": "0.1.0",
-    "requires": ["ClientsideChat", "sleep"]
+    "version": "0.1.0"
   }
