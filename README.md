@@ -23,3 +23,7 @@ Commands Aliases:
 - `/vcheck`
 
 If you only type in this case `/vcheck` or any other aliases without a argument it'll default to `/minecraft:tell` if the server doesn't have this but has another one you can use a different one by putting the command name as a argument. Ex. `/vcheck msg`
+
+# Servers that this works on
+- blockmania.com (this bug has already been reported)
+- tons of other servers I can't say
