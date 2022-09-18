@@ -12,10 +12,13 @@ register("command", (cmdType) => {
         var hasVanished = recentChat.filter((message) => {
           if (message.includes(Player.getName()) && message.includes(', ')) return message;
         });
+        var playersWhoLeft = recentChat.filter((message) => message.endsWith(' left the game.')).map((message) => message.split(' ')[0]);
         if (hasVanished.length !== 0) {
           var hasVanishedList = hasVanished[0].split(', ');
           var noVanishedList = TabList.getUnformattedNames();
-          var vanishedList = hasVanishedList.filter((name) => noVanishedList.includes(name) == false);
+          var vanishedList = hasVanishedList.filter((name) => {
+            if (noVanishedList.includes(name) == false && playersWhoLeft.includes(name) == false) return name
+          });
           ChatLib.chat("&9Vanished Players (By Faav):\n&l" + vanishedList.join(', '));
           ChatLib.chat("&ePlease press ESC!");
           Client.showTitle("&e&lPlease press ESC!", "", 1, 30, 1);
