@@ -20,4 +20,5 @@ Commands Aliases:
 - `/vanishchecker`
 - `/vanishcheck`
 - `/vcheck`
+
 The default command this command will use is /minecraft:tell to change this type the alias in this case `/vcheck` then then command name you are using for example `/vcheck msg`.
