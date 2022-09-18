@@ -9,6 +9,7 @@ A mod to see vanished people in servers. DISCLAIMER: This only works on servers 
 
 # How to use
 The command you use depends on what command the server has. (Everytime you join a server you must type `/ct load`)
+
 The server needs to have one of these commands:
 - `/minecraft:tell`
 - `/minecraft:me`
