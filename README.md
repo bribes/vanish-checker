@@ -16,9 +16,10 @@ The server needs to have one of these commands:
 - `/minecraft:msg`
 
 If the server has these the mod will work.
+
 Commands Aliases:
 - `/vanishchecker`
 - `/vanishcheck`
 - `/vcheck`
 
-The default command this command will use is /minecraft:tell to change this type the alias in this case `/vcheck` then then command name you are using for example `/vcheck msg`.
+If you only type in this case `/vcheck` or any other aliases without a argument it'll default to `/minecraft:tell` if the server doesn't have this but has another one you can use a different one by putting the command name as a argument. Ex. `/vcheck msg`
