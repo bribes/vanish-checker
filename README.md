@@ -27,3 +27,6 @@ If you only type in this case `/vcheck` or any other aliases without a argument 
 # Servers that this works on
 - blockmania.com (this bug has already been reported)
 - tons of other servers I can't say
+
+# Known Bugs
+- If a person leaves while you are doing the command it may show that they are vanished even though they are not.
