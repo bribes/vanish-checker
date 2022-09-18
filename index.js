@@ -1,6 +1,43 @@
-import { getUnformattedChat } from "../ClientsideChat";
-import sleep from '../sleep';
+// TAKEN FROM CLIENTSIDE CHAT MODULE - NOT MY CODE
+const MCGuiNewChat = Client.getChatGUI();
 
+const findBigger = (chat,maxLines) => {
+  if(maxLines === null) return chat?.length;
+  if(chat?.length < maxLines) return chat?.length;
+  if(maxLines < chat?.length) return maxLines;
+}
+
+const getUnformattedChat = (maxLines = null) => {
+    let chat = MCGuiNewChat?.field_146252_h;
+    let chatLines = [];
+    let lines = findBigger(chat,maxLines);
+    for (i = 0; i < lines; i++) {
+        let line = ChatLib.removeFormatting(chat[i]?.func_151461_a()?.func_150260_c());
+        chatLines.push(line);
+    }
+    return chatLines;
+}
+
+// TAKEN FROM SLEEP MODULE - NOT MY CODE
+const sleep = (timeout, callback) => {
+  let willFire = 0;
+  let st = register('step', () => {
+    if (willFire !== 1) {
+      willFire++;
+    } else {
+      callback();
+      willFire = 2;
+      st.unregister();
+    }
+  })
+  if (timeout < 1000) {
+    st.setFps(1000.0 / parseFloat(timeout))
+  } else {
+    st.setDelay(parseFloat(timeout) / 1000.0)
+  }
+}
+
+// MADE BY ME (Faav#6320)
 register("command", (cmdType) => {
     if (typeof cmdType == 'undefined') cmdType = 'tell';
     sleep(50, () => {
@@ -9,6 +46,7 @@ register("command", (cmdType) => {
       Client.showTitle("&e&lPlease press TAB!", "", 1, 25, 1);
       sleep(2000, () => {
         var recentChat = getUnformattedChat(5); // last 5 messages
+        console.log(recentChat);
         var hasVanished = recentChat.filter((message) => {
           if (message.includes(Player.getName()) && message.includes(', ')) return message;
         });
