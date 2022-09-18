@@ -14,6 +14,7 @@ The server needs to have one of these commands:
 - `/minecraft:me`
 - `/minecraft:w`
 - `/minecraft:msg`
+
 If the server has these the mod will work.
 Commands Aliases:
 - `/vanishchecker`
