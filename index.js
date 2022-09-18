@@ -1,3 +1,5 @@
+// made by Faav#6320
+
 import { getUnformattedChat } from "../ClientsideChat";
 import sleep from '../sleep';
 
